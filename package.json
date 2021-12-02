@@ -1,0 +1,19 @@
+{
+  "name": "object-by-typescript",
+  "version": "0.0.1",
+  "description": "조영호님 object 책 typescript 예제",
+  "scripts": {
+    "hello-test": "jest "
+  },
+  "author": "UseJuice",
+  "license": "MIT",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/jest": "^27.0.3",
+    "babel-jest": "^27.4.2",
+    "jest": "^27.4.3"
+  }
+}
