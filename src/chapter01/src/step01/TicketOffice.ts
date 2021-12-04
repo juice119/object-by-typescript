@@ -2,7 +2,7 @@ import { Ticket } from './Ticket';
 
 export class TicketOffice {
   private amount = 0;
-  private tickets: Ticket[];
+  private tickets: Ticket[] = [];
 
   constructor(amount: number, ticket: Ticket) {
     this.amount = amount;

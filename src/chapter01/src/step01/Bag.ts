@@ -2,13 +2,13 @@ import { Invitation } from './Invitation';
 import { Ticket } from './Ticket';
 
 export class Bag {
-  private amount: number;
+  private _amount: number;
   private readonly invitation: Invitation | null;
   private ticket: Ticket;
 
   constructor(invitation: Invitation | null, amount: number) {
     this.invitation = invitation;
-    this.amount = amount;
+    this._amount = amount;
   }
 
   hasInvitation(): boolean {
@@ -24,10 +24,14 @@ export class Bag {
   }
 
   minusAmount(amount: number): void {
-    this.amount -= amount;
+    this._amount -= amount;
   }
 
   public plusAmount(amount): void {
-    this.amount += amount;
+    this._amount += amount;
+  }
+
+  get amount(): number {
+    return this._amount;
   }
 }
