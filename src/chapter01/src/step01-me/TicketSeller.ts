@@ -1,4 +1,5 @@
 import { TicketOffice } from './TicketOffice';
+import { Audience } from './Audience';
 
 export class TicketSeller {
   private _ticketOffice: TicketOffice;
@@ -7,7 +8,7 @@ export class TicketSeller {
     this._ticketOffice = ticketOffice;
   }
 
-  get ticketOffice(): TicketOffice {
-    return this._ticketOffice;
+  sellTo(audience: Audience): void {
+    this._ticketOffice.plusAmount(audience.buy(this._ticketOffice.getTicket()));
   }
 }
