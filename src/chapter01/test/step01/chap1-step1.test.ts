@@ -44,7 +44,6 @@ describe('chap1-step1.test', () => {
     theater.enter(audience);
 
     // then
-    expect(audience.bag.hasInvitation()).toBeFalsy();
     expect(audience.bag.amount).toBe(audienceAmount - ticketPrice);
   });
 });
