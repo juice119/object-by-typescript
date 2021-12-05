@@ -9,6 +9,6 @@ export class TicketSeller {
   }
 
   sellTo(audience: Audience): void {
-    this._ticketOffice.plusAmount(audience.buy(this._ticketOffice.getTicket()));
+    this._ticketOffice.sellTicketTo(audience);
   }
 }
