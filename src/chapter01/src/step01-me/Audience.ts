@@ -9,13 +9,7 @@ export class Audience {
   }
 
   buy(ticket: Ticket): number {
-    if (this._bag.hasInvitation()) {
-      this._bag.setTicket(ticket);
-      return 0;
-    }
-    this._bag.setTicket(ticket);
-    this._bag.minusAmount(ticket.getFee());
-    return ticket.getFee();
+    return this._bag.hold(ticket);
   }
 
   get bag(): Bag {
