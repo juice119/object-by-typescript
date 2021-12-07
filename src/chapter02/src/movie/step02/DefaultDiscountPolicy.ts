@@ -1,7 +1,7 @@
 import { DiscountPolicy } from './DiscountPolicy';
 import { Screening } from './Screening';
 import { Money } from '../../money/Money';
-import { DiscountCondition } from '../step01/DiscountCondition';
+import { DiscountCondition } from './DiscountCondition';
 
 export abstract class DefaultDiscountPolicy implements DiscountPolicy {
   private readonly conditions: DiscountCondition[] = [];
