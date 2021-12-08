@@ -1,4 +1,3 @@
-import { DiscountPolicy } from '../DiscountPolicy';
 import { DiscountCondition } from '../DiscountCondition';
 import { Money } from '../../../money/Money';
 import { Screening } from '../Screening';
@@ -12,7 +11,7 @@ export class AmountDiscountPolicy extends DefaultDiscountPolicy {
     this.discountAmount = discountAmount;
   }
 
-  private getDiscountAmount(screening: Screening): Money {
+  protected getDiscountAmount(screening: Screening): Money {
     return this.discountAmount;
   }
 }
