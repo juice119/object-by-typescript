@@ -10,12 +10,12 @@ export class Money {
     return new Money(amount);
   }
 
-  plus(amount: Money): Money {
-    return new Money(this._amount + amount._amount);
+  plus(money: Money): Money {
+    return new Money(this._amount + money.amount);
   }
 
-  minus(amount: Money): Money {
-    return new Money(this._amount - amount._amount);
+  minus(money: Money): Money {
+    return new Money(this._amount - money.amount);
   }
 
   times(percent: number): Money {
