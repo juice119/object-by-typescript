@@ -3,9 +3,9 @@ import { Customer } from './Customer';
 import { Screening } from './Screening';
 
 export class Reservation {
+  private _Screening: Screening;
   private customer: Customer;
-  private Screening: Screening;
-  private fee: Money;
+  private _fee: Money;
   private audienceCount: number;
 
   constructor(
@@ -15,8 +15,16 @@ export class Reservation {
     audienceCount: number
   ) {
     this.customer = customer;
-    this.Screening = Screening;
-    this.fee = fee;
+    this._Screening = Screening;
+    this._fee = fee;
     this.audienceCount = audienceCount;
+  }
+
+  get Screening(): Screening {
+    return this._Screening;
+  }
+
+  get fee(): Money {
+    return this._fee;
   }
 }

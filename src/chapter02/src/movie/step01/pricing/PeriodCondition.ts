@@ -7,7 +7,7 @@ export class PeriodCondition implements DiscountCondition {
   private startTime: Date;
   private endTime: Date;
 
-  public PeriodCondition(dayOfWeek: DayOfWeek, startTime: Date, endTime: Date) {
+  constructor(dayOfWeek: DayOfWeek, startTime: Date, endTime: Date) {
     this.dayOfWeek = dayOfWeek;
     this.startTime = startTime;
     this.endTime = endTime;

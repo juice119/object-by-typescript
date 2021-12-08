@@ -1,9 +1,9 @@
 export class Money {
   public static ZERO: Money = Money.wons(0);
-  private readonly amount: number;
+  private readonly _amount: number;
 
   constructor(amount: number) {
-    this.amount = amount;
+    this._amount = amount;
   }
 
   public static wons(amount: number): Money {
@@ -11,23 +11,23 @@ export class Money {
   }
 
   plus(amount: Money): Money {
-    return new Money(this.amount + amount.amount);
+    return new Money(this._amount + amount._amount);
   }
 
   minus(amount: Money): Money {
-    return new Money(this.amount - amount.amount);
+    return new Money(this._amount - amount._amount);
   }
 
   times(percent: number): Money {
-    return new Money(this.amount * percent);
+    return new Money(this._amount * percent);
   }
 
   isLessThan(other: Money): boolean {
-    return this.amount < other.amount;
+    return this._amount < other._amount;
   }
 
   isGreaterThanOrEqual(other: Money): boolean {
-    return this.amount >= other.amount;
+    return this._amount >= other._amount;
   }
 
   equals(object: unknown | Money): boolean {
@@ -39,10 +39,14 @@ export class Money {
       return false;
     }
 
-    return object.amount === this.amount;
+    return object._amount === this._amount;
   }
 
   toString(): string {
-    return this.amount.toString() + '원';
+    return this._amount.toString() + '원';
+  }
+
+  get amount(): number {
+    return this._amount;
   }
 }
