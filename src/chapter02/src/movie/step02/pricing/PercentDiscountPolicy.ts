@@ -11,7 +11,7 @@ export class PercentDiscountPolicy extends DefaultDiscountPolicy {
     this.percent = percent;
   }
 
-  private getDiscountAmount(screening: Screening): Money {
-    return screening.getMovieFee().times(this.percent);
+  protected getDiscountAmount(screening: Screening): Money {
+    return undefined;
   }
 }
