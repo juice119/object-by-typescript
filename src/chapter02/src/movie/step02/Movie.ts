@@ -2,7 +2,7 @@ import { Money } from '../../money/Money';
 import { Screening } from './Screening';
 import { DiscountPolicy } from './DiscountPolicy';
 
-export class Movie {
+export abstract class Movie {
   private title: string;
   private runningTime: number;
   private fee: Money;
@@ -24,13 +24,18 @@ export class Movie {
     return this.fee;
   }
 
-  public calculateMovieFee(screening: Screening): Money {
-    if (!this.discountPolicy) {
-      return this.fee;
-    }
+  public changeDiscountPolicy(discountPolicy: DiscountPolicy) {
+    this.discountPolicy = discountPolicy;
+  }
 
-    return this.fee.minus(
-      this.discountPolicy.calculateDiscountAmount(screening)
-    );
+  public calculateMovieFee(screening: Screening): Money {
+    return this.fee.minus(this.getDiscountAmount(screening));
+  }
+
+  private getDiscountAmount(screening: Screening): Money {
+    if (!this.discountPolicy) {
+      return Money.ZERO;
+    }
+    return this.discountPolicy.calculateDiscountAmount(screening);
   }
 }
