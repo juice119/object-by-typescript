@@ -25,6 +25,10 @@ export class Movie {
   }
 
   public calculateMovieFee(screening: Screening): Money {
+    if (!this.discountPolicy) {
+      return this.fee;
+    }
+
     return this.fee.minus(
       this.discountPolicy.calculateDiscountAmount(screening)
     );
